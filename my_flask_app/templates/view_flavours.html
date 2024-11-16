@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Flavors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Chocolate House Management</h1>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>Seasonal Flavors</h2>
+        <ul>
+            {% for flavor in flavors %}
+                <li><strong>{{ flavor[1] }}</strong> - {{ flavor[2] }} (Available: {{ flavor[3] }})</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
+
